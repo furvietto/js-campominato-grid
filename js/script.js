@@ -12,13 +12,64 @@
 // Proviamo sempre prima con dei console.log() per capire se stiamo ricevendo i dati giusti.
 // Le validazioni e i controlli possiamo farli in un secondo momento.
 
+// ---------!!!!!!!!!!!!------- con function
+
+// const button = document.querySelector("button");
+
+// button.addEventListener("click" ,function () {
+    
+//     const select = document.getElementById("difficulty");
+    
+//     let easy = 100;
+//     let medium = 81;
+//     let hard = 49;
+//     let easyclass = "easy"
+//     let mediumClass = "medium";
+//     let hardClass = "hard"
+
+//     function addSquare(cont, difficulty) {
+//         const active = document.querySelector(".active");
+//         const squareCont = document.querySelector(".square-container");
+//         squareCont.innerHTML = ""
+//         active.classList.add("block");
+//         for (let i = 0; i < cont; i++) {
+//             const div = document.createElement("div");
+//             div.classList.add(difficulty);
+//             squareCont.append(div);
+//             div.append(i + 1);  
+            
+//             div.addEventListener("click" , function () {
+//                 this.classList.add("color-blue")
+//             })
+//         }
+//     }
+
+//     // easy
+
+//     if (select.value == "easy") {
+//         addSquare(easy,easyclass);
+        
+//     // medium
+
+//     } else if (select.value == "medium"){
+//         addSquare(medium,mediumClass);
+
+//     // hard
+
+//     } else {
+//         addSquare(hard,hardClass);
+//     }
+    
+// })
+
+// --------!!!!!!!!------- normale
 const button = document.querySelector("button");
 
 button.addEventListener("click" ,function () {
     
     const select = document.getElementById("difficulty");
     const active = document.querySelector(".active");
-    const squareCont = document.querySelector(".square-container");
+        const squareCont = document.querySelector(".square-container");
 
     // easy
 
@@ -44,9 +95,8 @@ button.addEventListener("click" ,function () {
         for (let i = 0; i < 81; i++) {
             const div = document.createElement("div");
             div.classList.add("medium");
-            squareCont.append(div); 
-            div.append(i + 1);
-            
+            squareCont.append(div);
+            div.append(i + 1);  
             
             div.addEventListener("click" , function () {
                 this.classList.add("color-blue")
@@ -56,14 +106,14 @@ button.addEventListener("click" ,function () {
     // hard
 
     } else {
-        squareCont.innerHTML = "";
+        squareCont.innerHTML = ""
         active.classList.add("block");
         for (let i = 0; i < 49; i++) {
             const div = document.createElement("div");
             div.classList.add("hard");
             squareCont.append(div);
-            div.append(i + 1)
-
+            div.append(i + 1);  
+            
             div.addEventListener("click" , function () {
                 this.classList.add("color-blue")
             })
