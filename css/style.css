@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+.color-aqua {
+    background-color: #7fffd4
+    ;
+}
+
 .cont-header {
     height: 10vh;
     display: flex;
@@ -61,7 +66,11 @@ button {
     border: 1px solid black;
 }
 
-
+.square-container > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 .container-footer {
