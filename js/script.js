@@ -20,6 +20,7 @@ button.addEventListener("click" ,function () {
     const active = document.querySelector(".active");
     const squareCont = document.querySelector(".square-container");
 
+    // easy
 
     if (select.value == "easy") {
         squareCont.innerHTML = ""
@@ -31,6 +32,8 @@ button.addEventListener("click" ,function () {
             div.append(i + 1);   
         }
         
+    // medium
+
     } else if (select.value == "medium"){
         squareCont.innerHTML = ""
         active.classList.add("block");
@@ -41,6 +44,8 @@ button.addEventListener("click" ,function () {
             div.append(i + 1)        
         }
 
+    // hard
+    
     } else {
         squareCont.innerHTML = "";
         active.classList.add("block");

@@ -4,11 +4,13 @@
     box-sizing: border-box;
 }
 
+/* colori */
 .color-aqua {
     background-color: #7fffd4
     ;
 }
 
+/* header */
 .cont-header {
     height: 10vh;
     display: flex;
@@ -25,6 +27,7 @@ button {
     width: 60px;
 }
 
+/* main */
 .container-main {
     height: 80vh;
     display: flex;
@@ -32,6 +35,7 @@ button {
     justify-content: center;
 }
 
+/* display */
 .active {
     display: none;
 }
@@ -48,31 +52,31 @@ button {
     flex-wrap: wrap;
 }
 
+/* difficulty */
+
 .square-container > .easy {
     width: calc(100% / 10);
     height: calc(100% / 10);
-    border: 1px solid black;
 }
 
 .square-container > .medium {
     width: calc(100% / 9);
     height: calc(100% / 9);
-    border: 1px solid black;
 }
 
 .square-container > .hard {
     width: calc(100% / 7);
     height: calc(100% / 7);
-    border: 1px solid black;
 }
 
 .square-container > div {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid black;
 }
 
-
+/* footer */
 .container-footer {
     height: 10vh;
     line-height: 10vh;
