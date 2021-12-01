@@ -29,7 +29,11 @@ button.addEventListener("click" ,function () {
             const div = document.createElement("div");
             div.classList.add("easy");
             squareCont.append(div);
-            div.append(i + 1);   
+            div.append(i + 1);  
+            
+            div.addEventListener("click" , function () {
+                this.classList.add("color-blue")
+            })
         }
         
     // medium
@@ -41,11 +45,16 @@ button.addEventListener("click" ,function () {
             const div = document.createElement("div");
             div.classList.add("medium");
             squareCont.append(div); 
-            div.append(i + 1)        
+            div.append(i + 1);
+            
+            
+            div.addEventListener("click" , function () {
+                this.classList.add("color-blue")
+            })
         }
 
     // hard
-    
+
     } else {
         squareCont.innerHTML = "";
         active.classList.add("block");
@@ -54,6 +63,10 @@ button.addEventListener("click" ,function () {
             div.classList.add("hard");
             squareCont.append(div);
             div.append(i + 1)
+
+            div.addEventListener("click" , function () {
+                this.classList.add("color-blue")
+            })
         }
     }
     
