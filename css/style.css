@@ -3,3 +3,69 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.cont-header {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+#difficulty {
+    width: 150px;
+}
+
+button {
+    width: 60px;
+}
+
+.container-main {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active {
+    display: none;
+}
+
+.active.block {
+    display: block;
+}
+
+.square-container {
+    width: 700px;
+    height: 500px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.square-container > .easy {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid black;
+}
+
+.square-container > .medium {
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+    border: 1px solid black;
+}
+
+.square-container > .hard {
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+    border: 1px solid black;
+}
+
+
+
+
+.container-footer {
+    height: 10vh;
+    line-height: 10vh;
+    padding-left: 20px;
+}
