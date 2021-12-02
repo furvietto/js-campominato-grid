@@ -62,15 +62,21 @@
     
 // })
 
+
+
+
 // --------!!!!!!!!------- normale
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+  }
+
 const button = document.querySelector("button");
+const select = document.getElementById("difficulty");
+const active = document.querySelector(".active");
+const squareCont = document.querySelector(".square-container");
+
 
 button.addEventListener("click" ,function () {
-    
-    const select = document.getElementById("difficulty");
-    const active = document.querySelector(".active");
-        const squareCont = document.querySelector(".square-container");
-
     // easy
 
     if (select.value == "easy") {
@@ -83,7 +89,8 @@ button.addEventListener("click" ,function () {
             div.append(i + 1);  
             
             div.addEventListener("click" , function () {
-                this.classList.add("color-blue")
+                this.classList.add("color-blue");
+                console.log(this)
             })
         }
         
