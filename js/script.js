@@ -12,211 +12,128 @@
 // Proviamo sempre prima con dei console.log() per capire se stiamo ricevendo i dati giusti.
 // Le validazioni e i controlli possiamo farli in un secondo momento.
 
-function createGridItem(num, cellPerSide) {
-    const cell = document.createElement("div");
-    cell.classList.add("square");
-    // metodo con calc all'interno dello style
-    // const sideLength = `calc(100% / ${cellsPerSide})`;
-    // cell.style.width = sideLength;
-    // cell.style.height = sideLength;
+// chiara method
+
+// function createGridItem(num, cellPerSide) {
+//     const cell = document.createElement("div");
+//     cell.classList.add("square");
+//     // metodo con calc all'interno dello style
+//     // const sideLength = `calc(100% / ${cellsPerSide})`;
+//     // cell.style.width = sideLength;
+//     // cell.style.height = sideLength;
   
-    //metodo con variabile
-    const sideLength = `--cell-length : ${cellPerSide}`;
-    cell.style = sideLength;
+//     //metodo con variabile
+//     const sideLength = `--cell-length : ${cellPerSide}`;
+//     cell.style = sideLength;
   
-    cell.innerHTML = `<span class="cell-number">${num}</span>`;
-    return cell;
-  }
-
-  function generatePlayground(cellNumber, cellPerSide, BOMB_NUMBER) {
-    const grid = document.createElement("div");
-    grid.className = "square-container";
-  
-    //faccio un ciclo per aggiungere i div nel dom e agganciare event listener
-    for (let i = 1; i <= cellNumber; i++) {
-      const cell = createGridItem(i, cellPerSide);
-  
-      // se clicco succede...
-      cell.addEventListener("click", function () {
-        this.classList.add("selected");
-      });
-  
-      grid.append(cell);
-    }
-  
-    document.querySelector(".container-main").append(grid);
-  }
-
-function play() {
-    document.querySelector(".container-main").innerHTML = ""
-
-    const levelSelector = document.getElementById("level");
-    const level = levelSelector.value;
-    const BOMB_NUMBER = 16;
-    let cellNumber;
-    let cellPerSide;
-
-    switch(level) {
-
-        case "easy":
-        default:
-            cellNumber = 100;
-            cellPerSide = 10;
-            break
-        
-        case "medium":
-            cellNumber = 81;
-            cellPerSide = 9;
-            break
-
-        case "hard":
-            cellNumber = 49;
-            cellPerSide = 7;
-            break   
-    }
-
-    generatePlayground(cellNumber, cellPerSide, BOMB_NUMBER);
-
-}   
-
-document.querySelector("button").addEventListener("click", function () {
-    play();
-  });
-
-
-// ---------!!!!!!!!!!!!------- con function
-
-// const button = document.querySelector("button");
-
-// button.addEventListener("click" ,function () {
-    
-//     const select = document.getElementById("difficulty");
-    
-//     let easy = 100;
-//     let medium = 81;
-//     let hard = 49;
-//     let easyclass = "easy"
-//     let mediumClass = "medium";
-//     let hardClass = "hard"
-
-//     function addSquare(cont, difficulty) {
-//         const active = document.querySelector(".active");
-//         const squareCont = document.querySelector(".square-container");
-//         squareCont.innerHTML = ""
-//         active.classList.add("block");
-//         for (let i = 0; i < cont; i++) {
-//             const div = document.createElement("div");
-//             div.classList.add(difficulty);
-//             squareCont.append(div);
-//             div.append(i + 1);  
-            
-//             div.addEventListener("click" , function () {
-//                 this.classList.add("color-blue")
-//             })
-//         }
-//     }
-
-//     // easy
-
-//     if (select.value == "easy") {
-//         addSquare(easy,easyclass);
-        
-//     // medium
-
-//     } else if (select.value == "medium"){
-//         addSquare(medium,mediumClass);
-
-//     // hard
-
-//     } else {
-//         addSquare(hard,hardClass);
-//     }
-    
-// })
-
-
-
-
-// --------!!!!!!!!------- normale
-// function getRndInteger(min, max) {
-//     return Math.floor(Math.random() * (max - min + 1) ) + min;
+//     cell.innerHTML = `<span class="cell-number">${num}</span>`;
+//     return cell;
 //   }
 
+//   function generatePlayground(cellNumber, cellPerSide, BOMB_NUMBER) {
+//     const grid = document.createElement("div");
+//     grid.className = "square-container";
   
-// const button = document.querySelector("button");
-// const select = document.getElementById("difficulty");
-// const active = document.querySelector(".active");
-// const squareCont = document.querySelector(".square-container");
-
-
-// button.addEventListener("click" ,function () {
-//     // easy
-//     let bomb = [];
-
-
-//     while (bomb.length < 18) {
-//         let numberRand = bomb.push(getRndInteger(1,20));
-//         while (bomb.includes(numberRand)) {
-//             numberRand = bomb.push(getRndInteger(1,20))
-//         }
+//     //faccio un ciclo per aggiungere i div nel dom e agganciare event listener
+//     for (let i = 1; i <= cellNumber; i++) {
+//       const cell = createGridItem(i, cellPerSide);
+  
+//       // se clicco succede...
+//       cell.addEventListener("click", function () {
+//         this.classList.add("selected");
+//       });
+  
+//       grid.append(cell);
 //     }
-    
-//     console.log(bomb);
+  
+//     document.querySelector(".container-main").append(grid);
+//   }
 
-//     if (select.value == "easy") {
-//         squareCont.innerHTML = ""
-//         active.classList.add("block");
-//         for (let i = 0; i < 100; i++) {
-//             const div = document.createElement("div");
-//             div.classList.add("easy");
-//             squareCont.append(div);
-//             div.append(i + 1);  
-            
-//             div.addEventListener("click" , function () {
-//                 if (bomb.includes(i)) {
-//                     this.classList.add("bomb")
+// function play() {
+//     document.querySelector(".container-main").innerHTML = ""
 
-//                 } else {
-//                     this.classList.add("color-blue");
-//                 }
-//             })
-           
-//         }
+//     const levelSelector = document.getElementById("level");
+//     const level = levelSelector.value;
+//     const BOMB_NUMBER = 16;
+//     let cellNumber;
+//     let cellPerSide;
 
-    
+//     switch(level) {
+
+//         case "easy":
+//         default:
+//             cellNumber = 100;
+//             cellPerSide = 10;
+//             break
         
-//     // medium
+//         case "medium":
+//             cellNumber = 81;
+//             cellPerSide = 9;
+//             break
 
-//     } else if (select.value == "medium"){
-//         squareCont.innerHTML = ""
-//         active.classList.add("block");
-//         for (let i = 0; i < 81; i++) {
-//             const div = document.createElement("div");
-//             div.classList.add("medium");
-//             squareCont.append(div);
-//             div.append(i + 1);  
-            
-//             div.addEventListener("click" , function () {
-//                 this.classList.add("color-blue")
-//             })
-//         }
-
-//     // hard
-
-//     } else {
-//         squareCont.innerHTML = ""
-//         active.classList.add("block");
-//         for (let i = 0; i < 49; i++) {
-//             const div = document.createElement("div");
-//             div.classList.add("hard");
-//             squareCont.append(div);
-//             div.append(i + 1);  
-            
-//             div.addEventListener("click" , function () {
-//                 this.classList.add("color-blue")
-//             })
-//         }
+//         case "hard":
+//             cellNumber = 49;
+//             cellPerSide = 7;
+//             break   
 //     }
+
+//     generatePlayground(cellNumber, cellPerSide, BOMB_NUMBER);
+
+// }   
+
+// document.querySelector("button").addEventListener("click", function () {
+//     play();
+//   });
+
+// mine code
+const buttton = document.querySelector("button")
+
+    buttton.addEventListener("click" , function () {
+        
+        const main_cont = document.querySelector(".container-main");
+        main_cont.innerHTML = ""
+
+        const grid = document.createElement("div");
+        grid.classList.add("square-container");
+        main_cont.append(grid);
+
+       
+
+        const level = document.getElementById("level");
+        const levelSelected = level.value;
+
+        let cellNumber;
+        let cellPerSide;
+
+        switch (levelSelected) {
+            default:
+            case "easy":
+                cellNumber = 100
+                cellPerSide = 10
+                break;
+            case "medium":
+                cellNumber = 81
+                cellPerSide = 9
+                break;
+            case "hard":
+                cellNumber = 49
+                cellPerSide = 7
+        }
+
+
+        for (let i = 0; i < cellNumber; i++) {
+            const square = document.createElement("div")
+            square.classList.add("square");
+            square.style = `--cell-length : ${cellPerSide}`;                     
+            grid.append(square);
+            square.innerText = i
+
+            square.addEventListener("click", function () {
+                this.classList.add("selected")
+            })
+        }
+
+
+    })
     
-// })
 
