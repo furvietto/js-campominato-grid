@@ -124,6 +124,11 @@ const buttton = document.querySelector("button")
         for (let i = 0; i < cellNumber; i++) {
             const square = document.createElement("div")
             square.classList.add("square");
+
+            // come cambiare proprietà di una variabile
+            // document.documentElement.style.setProperty(`--cell-length`,cellPerSide)
+
+            // oppure anche cosi
             square.style = `--cell-length : ${cellPerSide}`;                     
             grid.append(square);
             square.innerText = i
